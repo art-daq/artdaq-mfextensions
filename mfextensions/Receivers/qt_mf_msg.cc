@@ -2,7 +2,7 @@
 
 #include "messagefacility/MessageService/ELdestination.h"
 #include "mfextensions/Receivers/qt_mf_msg.hh"
-//#include "mfextensions/Extensions/MFExtensions.hh"
+// #include "mfextensions/Extensions/MFExtensions.hh"
 #include <iostream>
 
 size_t qt_mf_msg::sequence = 0;

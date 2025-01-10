@@ -1,4 +1,4 @@
-//#define NDEBUG
+// #define NDEBUG
 
 #define MF_DEBUG
 

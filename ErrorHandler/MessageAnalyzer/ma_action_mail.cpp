@@ -4,8 +4,8 @@
 #include <unistd.h>
 #include <iostream>
 #include <sstream>
-//#include <sys/types.h>
-//#include <sys/wait.h>
+// #include <sys/types.h>
+// #include <sys/wait.h>
 
 using namespace novadaq::errorhandler;
 
