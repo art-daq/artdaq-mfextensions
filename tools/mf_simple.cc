@@ -35,7 +35,7 @@ g++ -g -Wall -I$MESSAGEFACILITY_INC -I$CETLIB_INC -I$CETLIB_EXCEPT_INC -I$FHICLC
 #include "TRACE/tracemf.h"  // TRACE
 #include "fhiclcpp/ParameterSet.h"
 #include "messagefacility/MessageLogger/MessageLogger.h"
-//#include "TRACE/trace.h"				// TRACE
+// #include "TRACE/trace.h"				// TRACE
 
 #define TRACE_NAME "mftest"
 
