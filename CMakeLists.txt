@@ -1,5 +1,5 @@
 # ======================================================================
-#  artdaq_mfextensions main build file
+#  artdaq-mfextensions main build file
 #
 #  cd .../path/to/build/directory
 #  source .../path/to/artdaq/ups/setup_for_development
@@ -17,7 +17,7 @@ cmake_minimum_required (VERSION 3.19 FATAL_ERROR)
 
 find_package(cetmodules 3.08.00 REQUIRED)
 
-project(artdaq_mfextensions VERSION 1.10.00)
+project(artdaq-mfextensions VERSION 1.10.00)
 
 include(CetCMakeEnv)
 cet_cmake_env()
@@ -83,7 +83,7 @@ if(BTYPE_UC STREQUAL DEBUG)
 endif()
 
 
-cet_register_export_set(SET_NAME artdaq_mfextensions NAMESPACE artdaq_mfextensions)
+cet_register_export_set(SET_NAME artdaq-mfextensions NAMESPACE artdaq-mfextensions)
 
 # Configuration Files
 add_subdirectory(fcl)

@@ -15,7 +15,7 @@ cet_make_library(LIBRARY_NAME Components
   Qt5::Gui
   Qt5::Widgets
   TRACE::TRACE
-  artdaq_mfextensions::MessageAnalyzer
+  artdaq-mfextensions::MessageAnalyzer
 )
 
 install_headers()
