@@ -65,9 +65,10 @@ endif()
 
 #cet_report_compiler_flags()
 
-find_package(messagefacility QUIET)
+find_package(messagefacility REQUIRED QUIET)
 find_package(Boost QUIET COMPONENTS regex system program_options thread)
 find_package(TRACE)
+find_package(RdKafka REQUIRED)
 
 # Qt
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
