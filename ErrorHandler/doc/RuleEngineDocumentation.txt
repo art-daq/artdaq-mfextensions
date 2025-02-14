@@ -1,6 +1,6 @@
 
 Message Analyzer Rule Engine and Design Model
-Qiming Lu  03/28/13  
+Qiming Lu  03/28/13
 
 The Message Analyzer is a realtime correlated log message analyzing tool
 to capture abnormalities in the DAQ system. The analyze engine performs
@@ -34,8 +34,8 @@ knowledge across the system, the diagnostics is usually much more precise
 than simple message filtering and matching tools
 
 5. Allow user defined functions to be applied on messages and simple con-
-ditions, which greatly boosts the message analysis capabilities by not 
-limiting to simple message filtering and matching 
+ditions, which greatly boosts the message analysis capabilities by not
+limiting to simple message filtering and matching
 
 6. A rule is expressed in a domain-specific rule-language -- it's easy to
 understand but still capable of describing complex rules
@@ -62,9 +62,9 @@ II. Configurations
 2.1 Configuration files
 ---------------------------------------------------------------------
 
-There are two configuration files used by MsgAnalyzer (the message anaylyzer 
+There are two configuration files used by MsgAnalyzer (the message anaylyzer
 GUI appliation). The first configuration file has the default name
-"msganalyzer_mf.fcl", which is used to control the emitting of logging messages 
+"msganalyzer_mf.fcl", which is used to control the emitting of logging messages
 (mainly debugging messages) by the message analyzer. Message analyzer uses
 messagefacility for message logging, so the configuration file uses the same
 format and syntax as other messagefacility configuration files.
@@ -75,12 +75,12 @@ parameters for the following message analyzer functioning blocks,
 
 * 1. EHS : bool
 
-     enable/disable error hanlding supervisor (EHS). When disabled, only 
-     certain type of rule actions will be allowed, such as warning messages. 
-     Anything that can actually affect the running DAQ system will be 
+     enable/disable error hanlding supervisor (EHS). When disabled, only
+     certain type of rule actions will be allowed, such as warning messages.
+     Anything that can actually affect the running DAQ system will be
      disabled.
 
-* 2. node_status : 
+* 2. node_status :
      {
        alarm_on_first_warning : [ ]
        alarm_on_first_error : [ ]
@@ -107,7 +107,7 @@ parameters for the following message analyzer functioning blocks,
 By default, meaning start 'MsgAnalyzer' without supplying any command line
 options, message anayzer will look for "msganalyzer.fcl" and
 "msganalyzer_mf.fcl" files in the path defined in FHICL_FILE_PATH
-enverionement variable. 
+enverionement variable.
 
 FHICL_FILE_PATH is a ':' separated list of paths holding the possible
 locations for the configuration files. It is very much like the PATH
@@ -135,12 +135,12 @@ path for the configuration files.
 
 conditions :
 {
-  condition_1 : 
+  condition_1 :
   {
     ...
   }
 
-  condition_2 : 
+  condition_2 :
   {
     ...
   }
@@ -148,13 +148,13 @@ conditions :
 
 rules :
 {
-  rule_1 : 
+  rule_1 :
   {
     expression : ...
     message    : ...
   }
 
-  rule_2 : 
+  rule_2 :
   {
     expression : ...
     message    : ...
@@ -165,13 +165,13 @@ rules :
 2.3 The Congiuration of "condition"s:
 ---------------------------------------------------------------------
 
-conditions : 
+conditions :
 {
   fail_conn_cond :
   {
     description : "this condition detects the connection failer messages
                    between dcms and buffer nodes"
-    
+
     severity : WARNING
     source : ["dcm.*"]
     category : [*]
@@ -205,14 +205,14 @@ conditions :
 * "description" is a brief description of the condition. It can be viewed on
   the MsgAnalyzer "rule engine" tab
 
-* "severity" is a threshold of message severity. Any message with severity 
+* "severity" is a threshold of message severity. Any message with severity
   higher or equals to the threshold will be marked for further examination.
   "severity" can be set to one of the following: DEBUG, INFO, WARNING, ERROR.
 
 * "source" is an array of allowed sources. Can use regex expression to re-
   present multiple sources. Use ["*"] to indicate all sources
 
-* "category" is an array of allowed categories. Can use regex expression to 
+* "category" is an array of allowed categories. Can use regex expression to
   represent multiple categories. Use ["*"] to indicate all categories
 
 * "regex" is a regex expression used to check the body of an incoming message.
@@ -220,7 +220,7 @@ conditions :
   body
 
 * Parantheses "(...)" in the regex has the same meaning (defining groups) as
-  in normal regex expressions. Groups are numbered from 1, and can be 
+  in normal regex expressions. Groups are numbered from 1, and can be
   referenced in other places, such as in "target_group", or in user defined
   functions
 
@@ -236,7 +236,7 @@ conditions :
   indicating the occurrence and the frequency of matched messages reaches or
   exceeds the preset value; otherwise "false"
 
-* "persistent" can be set to true or false indicating whether or not the 
+* "persistent" can be set to true or false indicating whether or not the
   condition will remain on until reset manually
 
   * 1. when set to true, the condition remains on until a mannual reset
@@ -247,35 +247,35 @@ conditions :
        the "rate" section
 
   * 3. note when the "rate" section is unspecified the default 'timespan' is
-       infinite (a large number of seconds). So even with 'persistent' set 
+       infinite (a large number of seconds). So even with 'persistent' set
        to false the condition will never reset itself
 
   * 4. a wrinkle to this, the system is entirely driven by incoming messages.
        Therefore if no message comes in to start the engine, the condition
-       will never reset by itself. I'm considering adding a periodical timer 
+       will never reset by itself. I'm considering adding a periodical timer
        as a secondary source for driving the engine. Then this will not be a
        problem anymore
 
 * "granularity" configuration block allows to define the boolean outcome of
-  the condition under different granulatiry levels: 
+  the condition under different granulatiry levels:
 
   * 1. if both "per_source" and "per_target" are set to "false", the condition
        has only one boolean outcome. Messages coming from different sources
        or pointing to different targets are NOT distinguished
 
   * 2. if "per_source" set to "true", the condition has a one dimensional
-       boolean array of outcomes, with each element representing a single 
+       boolean array of outcomes, with each element representing a single
        boolean outcome for the corresponding message source. In this case,
        the condition is equivalant to a set of conditions with enumerated
        message sources
 
   * 3. if "per_target" set to "true", the condition is equivalent to a set of
        conditions with enumerated message targets. The message facility
-       message does not have a specific field denoted as "target", or object. 
+       message does not have a specific field denoted as "target", or object.
        But in common practice the object is usually embedded in the message
        body, therefore we leave to the users to define the message object by
        using the group definition in the "regex" and specifying the group
-       number in "target_group" field of "granularity" 
+       number in "target_group" field of "granularity"
 
   * 4. eventually if both "per_source" and "per_target" are set to "true",
        the condition is expanded to a two-dimensional array of non-
@@ -368,13 +368,13 @@ rules :
   rule_name :
   {
     description : "An example of a simple rule"
-    
+
     expression : "..." # rule expression
-    message    : "..." 
+    message    : "..."
 
     repeat_alarm : bool
 
-    action : 
+    action :
     {
       action_type1 : { param1:val param2:val ... }
       action_type2 : { ... }
@@ -397,7 +397,7 @@ rules :
   rule, and triggeres the alarm. The details about rule expressions will
   be explained in following section
 
-* "message" is the display message when messages trigger the alarm defined 
+* "message" is the display message when messages trigger the alarm defined
   by the rule expression. The message could be a plain string, or part
   of the message can be embodied by fields of basic conditions
 
@@ -406,9 +406,9 @@ rules :
   triggered by a different set of conditions or source of conditions. The same
   set of conditions cannot set off the alarm more than once. For example, the
   rule of "dcm ?? down" can be triggered by "bad dcm 03", and later again
-  triggered by "bad dcm 05". But will never be triggered more than once by the 
+  triggered by "bad dcm 05". But will never be triggered more than once by the
   same "bad dcm 03" without reset the rule and conditions. Default is 'false'
-  
+
 * "action" block contains the associated list of actions to be executed when
   the rule triggers. There is no order in the execution. If there is a need
   of ordered execution for a use case I can add an "ordered_action" block.
@@ -418,10 +418,10 @@ rules :
 2.6 Rule Expressions
 -----------------------------------------------------------
 
-The rule expression gets evaluated each time a new message comes in. The 
+The rule expression gets evaluated each time a new message comes in. The
 rule is make up of pre-defined simple conditions, and connected through
 boolean operators. Constrains can also be applied through "WHERE" clause
-similar to the SQL language. 
+similar to the SQL language.
 
 
 Syntax: EBNF Representation of Rule Expression
@@ -439,7 +439,7 @@ domain_primary   :=   condition '.$' 's'|'t' { '=' condition '.$' 's'|'t' }
                                              [ '=' 'ANY' | string ]
                     | '(' domain_expr ')'
 
-function         := name '(' condition [ '.$' 's'|'t' ] [ { ',' value } ] ')' 
+function         := name '(' condition [ '.$' 's'|'t' ] [ { ',' value } ] ')'
                     [ compare_op value ]
 
 condition        := alpha_lead_str
@@ -462,7 +462,7 @@ Table of Symbols
 ----------------
 definition        :=
 alternation        |
-option           [...] 
+option           [...]
 repetition       {...}
 terminal string  '...'
 
@@ -491,7 +491,7 @@ e5: "cond WHERE cond.$s='dcm-3-01-01' OR cond.$t='bn-05'"
     coming from any dcm that they cannot talk to bn-05
 
 e6: "count(cond, 'source')>5"
-    More than 5 dcms report that they cannot talk to buffer nodes (could be 
+    More than 5 dcms report that they cannot talk to buffer nodes (could be
     different buffer nodes)
 
 e7: "count(cond, 'source')>5 WHERE cond.$t='bn-03'"
@@ -500,14 +500,14 @@ e7: "count(cond, 'source')>5 WHERE cond.$t='bn-03'"
 e8: "count(cond, 'source')>5 WHERE cond.$t=ANY"
     More than 5 dcms report that they cannot talk to the same buffer node
 
-e9: "count(cond, 'message')>100" 
+e9: "count(cond, 'message')>100"
     More than 100 messages are reported about dcm cannot talk to buffer
     nodes, regardless of the sources and targets
 
 e10: "is_syncd(cond)"
      Calling user-defined funtion is_syncd() with the condition "cond"
 
-Condition expression can also include more than one simple conditions. 
+Condition expression can also include more than one simple conditions.
 
 Given:
 Condition "C1" is "dcm-xx" (source) cannot talk to "bn-yy" (target)
@@ -548,13 +548,13 @@ The return type of a custom function can also be a string, a number, or a
 boolean type. However, for a custom funtion to work in a rule's condition
 expression, the outcome associate with the custom function must be a boolean
 value. So if the return type is a non-boolean type, it is required to use one
-of the compare operators to build a boolean output. For example, 
+of the compare operators to build a boolean output. For example,
 
-count(cond, 'source') > 5. 
+count(cond, 'source') > 5.
 
-Supported comparison operators are 
+Supported comparison operators are
 
-'<', '<=', '==', '!=', '>=', and '>'. 
+'<', '<=', '==', '!=', '>=', and '>'.
 
 Also note that the uniary NOT operator ('!') is not supported. Therefore if
 ever need a case like this,
@@ -597,9 +597,9 @@ been triggered. The consequences of trigering a rule is that a set of actions
 will be executed. There are two general types of actions, one is a rule
 messages that is to be displayed on the MA console panal, and everything else.
 The message to be displayed is configured in the "message:'message body'"
-entry. One or more real actions can be configured in the 
+entry. One or more real actions can be configured in the
 
-actions : 
+actions :
 {
   action_type1 : { param1:val param2:val ... }
   action_type2 : { ... }
@@ -616,13 +616,13 @@ with minimum efforts.
 
 For the currently supported actions,
 
-script : 
-{ 
+script :
+{
   name  : string
   param : string
 }
 
-where 'name' is a string storing the path and filename to the shell script 
+where 'name' is a string storing the path and filename to the shell script
 to be executed. 'param' is a string that will be appended as parameters to the
 shell script.
 
@@ -640,7 +640,7 @@ generated depending on the conditions or messages that trigger the rule.
 Embedded symbols that will be replaced by the real content are wrapped inside
 of ${...}. Following symbols are right now supported,
 
-${cond.$s}  the source of the lastest message in condition 'cond' that 
+${cond.$s}  the source of the lastest message in condition 'cond' that
             triggered the rule
 
 ${cond.$t}  the target of the latest message in condition 'cond' that
@@ -664,13 +664,13 @@ Examples of tempated messages:
 III. Writing Custom Functions
 --------------------------------
 
-The rule engine provides message filtering and regex matching facilities 
-though basic conditions. These conditions can be used as foundamental 
+The rule engine provides message filtering and regex matching facilities
+though basic conditions. These conditions can be used as foundamental
 construction bricks to build complex error detecting and pattern recognizing
 rules. However the elemental building unit of a rule is not limited to just
-basic message filtering. The rule engine also provides interfaces and 
+basic message filtering. The rule engine also provides interfaces and
 facilities for users to write their own message handling functions, which
-brings even more flexibilities and makes it fit for both very generic and 
+brings even more flexibilities and makes it fit for both very generic and
 specific applications.
 
 
@@ -710,7 +710,7 @@ conditions :
   ...
 }
 
-Then we can build a rule to make use of the "is_sync()" function and the 
+Then we can build a rule to make use of the "is_sync()" function and the
 "sync_msg" condition:
 
 rules :
@@ -733,10 +733,3 @@ from that point on.
 
 3.2 How To Write A Custom Function
 ----------------------------------
-
-
-
-
-
-
-
