@@ -12,4 +12,3 @@ msglogger -d server -a app9 hello
 msglogger -d server -a app10 hello
 msglogger -d server -a app11 hello
 msglogger -d server -a app12 hello
-
