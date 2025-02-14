@@ -19,7 +19,7 @@ buf=''
 
 def main(argv):
     print('len(argv)=%d'%(len(argv),))
-    if len(argv) < 2 or len(argv) > 5: 
+    if len(argv) < 2 or len(argv) > 5:
         print(USAGE)
         sys.exit()
     node,port = argv[1].split(':')

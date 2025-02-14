@@ -1,10 +1,10 @@
-cet_make_exec(NAME msgsender SOURCE msgsender.cc 
+cet_make_exec(NAME msgsender SOURCE msgsender.cc
 LIBRARIES
 messagefacility::MF_MessageLogger
 Boost::program_options
 )
 
-cet_make_exec(NAME MFTest SOURCE MFTest.cc 
+cet_make_exec(NAME MFTest SOURCE MFTest.cc
 LIBRARIES
 fhiclcpp::fhiclcpp
 messagefacility::MF_MessageLogger
@@ -38,4 +38,3 @@ artdaq_mfextensions::MFExtensions
 
 install_headers()
 install_source()
-
