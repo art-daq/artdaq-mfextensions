@@ -3,4 +3,3 @@ trace: {
   threshold: DEBUG
   level_offset: 0
 }
-

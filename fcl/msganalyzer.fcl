@@ -16,13 +16,13 @@ receivers:
   #{
     #receiverType: "LogReader"
     #filename: "/tmp/eventbuilder/eventbuilder-20150424163410-ironwork-22507.log"
-  #} 
+  #}
 
   syslog:
   {
     receiverType: "UDP"
     port: 10005
-  }   
+  }
 }
 
 
@@ -62,8 +62,8 @@ conditions :
 
     granularity :
     {
-      per_source : true 
-      #per_target : true 
+      per_source : true
+      #per_target : true
       #target_group : 1
     }
   }
@@ -132,7 +132,7 @@ conditions :
   {
 
       description: "Tried to configure DCM with no enabled FEBs"
-    
+
       severity : ERROR
       source   : ["dcm-.*"]
       category : ["DcmControl"]
@@ -231,9 +231,3 @@ rules :
   }
 
 }
-
-
-
-
-
-
