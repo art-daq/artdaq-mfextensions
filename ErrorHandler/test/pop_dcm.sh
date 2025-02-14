@@ -12,4 +12,3 @@ msglogger -d server -a dcm-3-03-01 hello
 msglogger -d server -a dcm-3-03-02 hello
 msglogger -d server -a dcm-3-03-03 hello
 msglogger -d server -a dcm-3-03-04 hello
-

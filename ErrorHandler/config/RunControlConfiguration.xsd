@@ -24,7 +24,7 @@
     </xsd:sequence>
   </xsd:complexType>
 
-  <xsd:complexType name="RCConfig_t"> 
+  <xsd:complexType name="RCConfig_t">
     <xsd:sequence>
       <xsd:element name="DetectorId"   type="xsd:int"    minOccurs="0"/>
       <xsd:element name="RCLogToDB"    type="RCLogToDB_t" minOccurs="0"/>
@@ -48,4 +48,3 @@
   </xsd:complexType>
 
 </xsd:schema>
-  

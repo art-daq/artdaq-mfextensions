@@ -47,8 +47,8 @@ conditions :
 
     granularity :
     {
-      per_source : true 
-      #per_target : true 
+      per_source : true
+      #per_target : true
       #target_group : 1
     }
   }
@@ -134,9 +134,3 @@ rules :
     message : "3 or more DCMs reports the connection failure with ${c3.$t}"
   }
 }
-
-
-
-
-
-
