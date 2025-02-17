@@ -21,6 +21,10 @@ mfPlugin( Friendly )
 mfPlugin( MultiFile )
 mfPlugin( ANSI )
 
+if(RDKAFKA_FOUND)
+  mfPlugin(Kafka LIBRARIES REG TRACE::TRACE RdKafka::rdkafka RdKafka::rdkafka++)
+endif()
+
 install_fhicl(SUBDIRS fcl)
 install_headers()
 install_source()
