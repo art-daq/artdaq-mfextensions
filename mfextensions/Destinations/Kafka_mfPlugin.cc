@@ -10,8 +10,8 @@
 
 // C/C++ includes
 #include <librdkafka/rdkafkacpp.h>
-#include <fstream>
 #include <chrono>
+#include <fstream>
 
 #define TRACE_NAME "Kafka_mfPlugin"
 #include "trace.h"
