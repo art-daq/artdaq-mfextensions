@@ -68,7 +68,7 @@ endif()
 find_package(messagefacility REQUIRED QUIET)
 find_package(Boost QUIET COMPONENTS regex system program_options thread)
 find_package(TRACE)
-find_package(RdKafka REQUIRED)
+find_package(RdKafka)
 
 # Qt
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
