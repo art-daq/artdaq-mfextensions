@@ -42,6 +42,8 @@ find_package_handle_standard_args(RdKafka DEFAULT_MSG
     RdKafka_INCLUDE_DIR
 )
 
+if(EXISTS ${RdKafka_INCLUDE_DIR})
+
 set(CONTENTS "#include <librdkafka/rdkafka.h>\n #if RD_KAFKA_VERSION >= ${RDKAFKA_MIN_VERSION_HEX}\n int main() { }\n #endif")
 set(FILE_NAME ${CMAKE_CURRENT_BINARY_DIR}/rdkafka_version_test.cpp)
 file(WRITE ${FILE_NAME} ${CONTENTS})
@@ -49,6 +51,7 @@ file(WRITE ${FILE_NAME} ${CONTENTS})
 try_compile(RdKafka_FOUND ${CMAKE_CURRENT_BINARY_DIR}
             SOURCES ${FILE_NAME}
             CMAKE_FLAGS "-DINCLUDE_DIRECTORIES=${RdKafka_INCLUDE_DIR}")
+endif()
 
 if (RdKafka_FOUND)
     add_library(RdKafka::rdkafka ${RDKAFKA_LIBRARY_TYPE} IMPORTED GLOBAL)
@@ -73,5 +76,5 @@ if (RdKafka_FOUND)
         RdKafka_LIBRARY_PATH
     )
 else()
-    message(FATAL_ERROR "Failed to find valid rdkafka version")
+    message("Failed to find valid rdkafka version")
 endif()
