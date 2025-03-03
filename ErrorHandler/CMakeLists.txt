@@ -9,8 +9,8 @@ Qt5::Widgets
 	messagefacility::MF_MessageLogger
 	TRACE::TRACE
 	Boost::thread
-	artdaq_mfextensions::Components
-	artdaq_mfextensions::MFReceivers
+	artdaq-mfextensions::Components
+	artdaq-mfextensions::MFReceivers
 )
 
 #install_fhicl(SUBDIRS config)

@@ -21,7 +21,7 @@ LIBRARIES
 messagefacility::MF_MessageLogger
 Qt5::Core
 Boost::program_options
-artdaq_mfextensions::MFReceivers
+artdaq-mfextensions::MFReceivers
 )
 
 cet_make_exec(NAME msgviewer SOURCE msgviewer.cc mvdlg.cc
@@ -32,8 +32,8 @@ Boost::regex
 fhiclcpp::fhiclcpp
 messagefacility::MF_MessageLogger
 TRACE::TRACE
-artdaq_mfextensions::MFReceivers
-artdaq_mfextensions::MFExtensions
+artdaq-mfextensions::MFReceivers
+artdaq-mfextensions::MFExtensions
 )
 
 install_headers()

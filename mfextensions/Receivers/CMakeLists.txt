@@ -27,7 +27,7 @@ cet_make_library(LIBRARY_NAME receiver INTERFACE
 				 LIBRARIES INTERFACE
 				 art_plugin_support::plugin_config_macros
 				 art_plugin_support::support_macros
-				 artdaq_mfextensions::MFReceivers)
+				 artdaq-mfextensions::MFReceivers)
 
 include(BasicPlugin)
 foreach(type IN ITEMS receiver)
