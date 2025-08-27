@@ -39,6 +39,8 @@ if(DOXYGEN_FOUND)
 		endforeach()
 	endif()
 
+    string(TIMESTAMP GENERATE_TIMESTAMP)
+
 	string(REPLACE ";" " " DOXYGEN_INCLUDE_PATH "${CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES}")
     file(REAL_PATH ${PROJECT_SOURCE_DIR}/.. DOXYGEN_STRIP_FROM_PATH)
 
@@ -46,11 +48,6 @@ if(DOXYGEN_FOUND)
 		configure_file(${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile @ONLY)
 	else()
 		configure_file(${DOXYFILE_DIR}/Doxyfile.in ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile @ONLY)
-	endif()
-	if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/mainpage.md.in)
-		configure_file(${CMAKE_CURRENT_SOURCE_DIR}/mainpage.md.in ${CMAKE_CURRENT_BINARY_DIR}/mainpage.md @ONLY)
-	else()
-		configure_file(${DOXYFILE_DIR}/mainpage.md.in ${CMAKE_CURRENT_BINARY_DIR}/mainpage.md @ONLY)
 	endif()
 	if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/header.html.in)
 		configure_file(${DOXYFILE_DIR}/header.html.in ${CMAKE_CURRENT_BINARY_DIR}/header.html @ONLY)
@@ -77,5 +74,6 @@ if(DOXYGEN_FOUND)
 	install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/man DESTINATION ${CMAKE_INSTALL_DATADIR})
 endif(DOXYGEN_FOUND)
 endmacro()
+
 
 create_doxygen_documentation(EXCLUDE ErrorHandler)
