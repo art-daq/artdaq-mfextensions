@@ -40,9 +40,9 @@ class ELSMTP : public ELdestination
 public:
 	/**
 	 * \brief Configuration parameters for ELSMTP
-     *
-     * Configuration example:
-     * smtp: { type: "SMTP" threshold : "WARNING" from_address : "artdaq@fnal.gov" to_addresses : ["eflumerf@fnal.gov"] message_filter_regexes: [ "Error in cling::AutoLoadingVisitor", "SNDBUF \\d+ not expected" ] }
+	 *
+	 * Configuration example:
+	 * smtp: { type: "SMTP" threshold : "WARNING" from_address : "artdaq@fnal.gov" to_addresses : ["eflumerf@fnal.gov"] message_filter_regexes: [ "Error in cling::AutoLoadingVisitor", "SNDBUF \\d+ not expected" ] }
 	 */
 	struct Config
 	{
@@ -318,24 +318,24 @@ void ELSMTP::routePayload(const std::ostringstream& oss, const ErrorObj& msg)
 		}
 	}
 	if (!message_filter_regexes_.empty())
-    {
-        for (const auto& regex_str : message_filter_regexes_)
-        {
-            try
-            {
-                std::regex filter_regex(regex_str);
-                if (std::regex_search(oss.str(), filter_regex))
-                {
-                    // Message matches a filter regex, skip sending
-                    return;
-                }
-            }
-            catch (const std::regex_error& e)
-            {
-                // mf::LogWarning("ELSMTP") << "Invalid regex filter: " << regex_str << ". Error: " << e.what();
-            }
-        }
-    }
+	{
+		for (const auto& regex_str : message_filter_regexes_)
+		{
+			try
+			{
+				std::regex filter_regex(regex_str);
+				if (std::regex_search(oss.str(), filter_regex))
+				{
+					// Message matches a filter regex, skip sending
+					return;
+				}
+			}
+			catch (const std::regex_error& e)
+			{
+				// mf::LogWarning("ELSMTP") << "Invalid regex filter: " << regex_str << ". Error: " << e.what();
+			}
+		}
+	}
 	message_contents_ << to_html(oss.str(), msg);
 
 	if (!sending_thread_active_)
