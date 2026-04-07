@@ -57,9 +57,9 @@ public:
 		/// "from_address" (REQUIRED): Source email address
 		fhicl::Atom<std::string> from =
 		    fhicl::Atom<std::string>{fhicl::Name{"from_address"}, fhicl::Comment{"Source email address"}};
-		/// "subject" (Default: "MessageFacility SMTP Message Digest"): Subject of the email message
+		/// "subject" (Default: "{app_name} SMTP Message Digest"): Subject of the email message. {app_name} will be replaced by the name of the application sending the message
 		fhicl::Atom<std::string> subject = fhicl::Atom<std::string>{
-		    fhicl::Name{"subject"}, fhicl::Comment{"Subject of the email message"}, "MessageFacility SMTP Message Digest"};
+		    fhicl::Name{"subject"}, fhicl::Comment{"Subject of the email message"}, "{app_name} SMTP Message Digest"};
 		/// "message_header" (Default: ""): String to preface messages with in email body
 		fhicl::Atom<std::string> messageHeader = fhicl::Atom<std::string>{
 		    fhicl::Name{"message_header"}, fhicl::Comment{"String to preface messages with in email body"}, ""};
@@ -79,9 +79,13 @@ public:
 		/// "email_send_interval_seconds" (Default: 15): Only send email every N seconds
 		fhicl::Atom<size_t> sendInterval = fhicl::Atom<size_t>{fhicl::Name{"email_send_interval_seconds"},
 		                                                       fhicl::Comment{"Only send email every N seconds"}, 15};
-		/// "message_regex_filters" (Default: {}): Only send messages that match the given regex filter(s)
-		fhicl::Sequence<std::string> messageRegexFilters = fhicl::Sequence<std::string>{
-		    fhicl::Name{"message_regex_filters"}, fhicl::Comment{"Only send messages that match the given regex filter(s)"},
+		/// "message_required_regexes" (Default: {}): Only send messages that match at least one of the given regex(es)
+		fhicl::Sequence<std::string> messageRequiredRegexes = fhicl::Sequence<std::string>{
+		    fhicl::Name{"message_required_regexes"}, fhicl::Comment{"Only send messages that match at least one of the given regex(es)"},
+		    fhicl::Sequence<std::string>::default_type{}};
+		/// "message_filter_regexes" (Default: {}): Do not send messages that match any of the given regex(es)
+		fhicl::Sequence<std::string> messageFilterRegexes = fhicl::Sequence<std::string>{
+		    fhicl::Name{"message_filter_regexes"}, fhicl::Comment{"Do not send messages that match any of the given regex(es)"},
 		    fhicl::Sequence<std::string>::default_type{}};
 	};
 	/// Used for ParameterSet validation
@@ -119,7 +123,8 @@ private:
 	std::string from_;
 	std::string subject_;
 	std::string message_prefix_;
-	std::vector<std::string> message_regex_filters_;
+	std::vector<std::string> message_required_regexes_;
+	std::vector<std::string> message_filter_regexes_;
 
 	// Message information
 	long pid_;
@@ -154,7 +159,8 @@ ELSMTP::ELSMTP(Parameters const& pset)
     , from_(pset().from())
     , subject_(pset().subject())
     , message_prefix_(pset().messageHeader())
-    , message_regex_filters_(pset().messageRegexFilters())
+    , message_required_regexes_(pset().messageRequiredRegexes())
+    , message_filter_regexes_(pset().messageFilterRegexes())
     , pid_(static_cast<long>(getpid()))
     , use_ssl_(pset().useSmtps())
     , username_(pset().user())
@@ -232,6 +238,8 @@ ELSMTP::ELSMTP(Parameters const& pset)
 	size_t start = exe.find_last_of('/', end);
 
 	app_ = exe.substr(start + 1, end - start - 1);
+
+	subject_ = std::regex_replace(subject_, std::regex("\\{app_name\\}"), app_ + "[" + std::to_string(pid_) + "]");
 }
 
 std::string ELSMTP::to_html(std::string msgString, const ErrorObj& msg)
@@ -281,17 +289,17 @@ void ELSMTP::routePayload(const std::ostringstream& oss, const ErrorObj& msg)
 {
 	std::lock_guard<std::mutex> lk(message_mutex_);
 
-	if (!message_regex_filters_.empty())
+	if (!message_required_regexes_.empty())
 	{
-		bool matches_filter = false;
-		for (const auto& regex_str : message_regex_filters_)
+		bool matches_require = false;
+		for (const auto& regex_str : message_required_regexes_)
 		{
 			try
 			{
-				std::regex filter_regex(regex_str);
-				if (std::regex_search(oss.str(), filter_regex))
+				std::regex require_regex(regex_str);
+				if (std::regex_search(oss.str(), require_regex))
 				{
-					matches_filter = true;
+					matches_require = true;
 					break;
 				}
 			}
@@ -300,12 +308,31 @@ void ELSMTP::routePayload(const std::ostringstream& oss, const ErrorObj& msg)
 				// mf::LogWarning("ELSMTP") << "Invalid regex filter: " << regex_str << ". Error: " << e.what();
 			}
 		}
-		if (!matches_filter)
+		if (!matches_require)
 		{
-			// Message does not match any filter, skip sending
+			// Message does not match any required regex, skip sending
 			return;
 		}
 	}
+	if (!message_filter_regexes_.empty())
+    {
+        for (const auto& regex_str : message_filter_regexes_)
+        {
+            try
+            {
+                std::regex filter_regex(regex_str);
+                if (std::regex_search(oss.str(), filter_regex))
+                {
+                    // Message matches a filter regex, skip sending
+                    return;
+                }
+            }
+            catch (const std::regex_error& e)
+            {
+                // mf::LogWarning("ELSMTP") << "Invalid regex filter: " << regex_str << ". Error: " << e.what();
+            }
+        }
+    }
 	message_contents_ << to_html(oss.str(), msg);
 
 	if (!sending_thread_active_)
