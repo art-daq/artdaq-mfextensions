@@ -40,6 +40,9 @@ class ELSMTP : public ELdestination
 public:
 	/**
 	 * \brief Configuration parameters for ELSMTP
+     *
+     * Configuration example:
+     * smtp: { type: "SMTP" threshold : "WARNING" from_address : "artdaq@fnal.gov" to_addresses : ["eflumerf@fnal.gov"] message_filter_regexes: [ "Error in cling::AutoLoadingVisitor", "SNDBUF \\d+ not expected" ] }
 	 */
 	struct Config
 	{
