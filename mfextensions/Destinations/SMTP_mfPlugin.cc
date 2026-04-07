@@ -20,6 +20,8 @@
 #include <memory>
 #include <mutex>
 #include <random>
+#include <regex>
+#include <string>
 
 #include <QtCore/QString>
 #include "cetlib/compiler_macros.h"
@@ -77,6 +79,10 @@ public:
 		/// "email_send_interval_seconds" (Default: 15): Only send email every N seconds
 		fhicl::Atom<size_t> sendInterval = fhicl::Atom<size_t>{fhicl::Name{"email_send_interval_seconds"},
 		                                                       fhicl::Comment{"Only send email every N seconds"}, 15};
+		/// "message_regex_filters" (Default: {}): Only send messages that match the given regex filter(s)
+		fhicl::Sequence<std::string> messageRegexFilters = fhicl::Sequence<std::string>{
+		    fhicl::Name{"message_regex_filters"}, fhicl::Comment{"Only send messages that match the given regex filter(s)"},
+		    fhicl::Sequence<std::string>::default_type{}};
 	};
 	/// Used for ParameterSet validation
 	using Parameters = fhicl::WrappedTable<Config>;
@@ -113,6 +119,7 @@ private:
 	std::string from_;
 	std::string subject_;
 	std::string message_prefix_;
+	std::vector<std::string> message_regex_filters_;
 
 	// Message information
 	long pid_;
@@ -140,7 +147,22 @@ private:
 // ELSMTP c'tor
 //======================================================================
 ELSMTP::ELSMTP(Parameters const& pset)
-    : ELdestination(pset().elDestConfig()), smtp_host_(pset().host()), port_(pset().port()), to_(pset().to()), from_(pset().from()), subject_(pset().subject()), message_prefix_(pset().messageHeader()), pid_(static_cast<long>(getpid())), use_ssl_(pset().useSmtps()), username_(pset().user()), password_(pset().pw()), ssl_verify_host_cert_(pset().verifyCert()), sending_thread_active_(false), abort_sleep_(false), send_interval_s_(pset().sendInterval())
+    : ELdestination(pset().elDestConfig())
+    , smtp_host_(pset().host())
+    , port_(pset().port())
+    , to_(pset().to())
+    , from_(pset().from())
+    , subject_(pset().subject())
+    , message_prefix_(pset().messageHeader())
+    , message_regex_filters_(pset().messageRegexFilters())
+    , pid_(static_cast<long>(getpid()))
+    , use_ssl_(pset().useSmtps())
+    , username_(pset().user())
+    , password_(pset().pw())
+    , ssl_verify_host_cert_(pset().verifyCert())
+    , sending_thread_active_(false)
+    , abort_sleep_(false)
+    , send_interval_s_(pset().sendInterval())
 {
 	// hostname
 	char hostname_c[1024];
@@ -258,6 +280,32 @@ std::string ELSMTP::to_html(std::string msgString, const ErrorObj& msg)
 void ELSMTP::routePayload(const std::ostringstream& oss, const ErrorObj& msg)
 {
 	std::lock_guard<std::mutex> lk(message_mutex_);
+
+	if (!message_regex_filters_.empty())
+	{
+		bool matches_filter = false;
+		for (const auto& regex_str : message_regex_filters_)
+		{
+			try
+			{
+				std::regex filter_regex(regex_str);
+				if (std::regex_search(oss.str(), filter_regex))
+				{
+					matches_filter = true;
+					break;
+				}
+			}
+			catch (const std::regex_error& e)
+			{
+				// mf::LogWarning("ELSMTP") << "Invalid regex filter: " << regex_str << ". Error: " << e.what();
+			}
+		}
+		if (!matches_filter)
+		{
+			// Message does not match any filter, skip sending
+			return;
+		}
+	}
 	message_contents_ << to_html(oss.str(), msg);
 
 	if (!sending_thread_active_)
