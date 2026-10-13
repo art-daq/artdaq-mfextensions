@@ -1,6 +1,9 @@
 #include "mfextensions/Receivers/ReceiverManager.hh"
 
 #include <iostream>
+#include <string>
+#include <utility>
+#include <vector>
 #include "fhiclcpp/ParameterSet.h"
 #include "mfextensions/Receivers/makeMVReceiver.hh"
 

@@ -3,6 +3,9 @@
 
 #include <cetlib/filepath_maker.h>
 #include <fhiclcpp/make_ParameterSet.h>
+#include <string>
+#include <utility>
+#include <vector>
 
 using fhicl::ParameterSet;
 

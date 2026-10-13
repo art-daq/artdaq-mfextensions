@@ -5,9 +5,11 @@
 #include "ErrorHandler/MessageAnalyzer/ma_participants.h"
 #include "ErrorHandler/MessageAnalyzer/ma_rule.h"
 #include "ErrorHandler/MessageAnalyzer/ma_types.h"
+#include "ErrorHandler/MessageAnalyzer/ma_timing_event.h"
 
 #include <boost/thread.hpp>
-#include "ErrorHandler/MessageAnalyzer/ma_timing_event.h"
+#include <string>
+#include <vector>
 
 namespace fhicl {
 class ParameterSet;

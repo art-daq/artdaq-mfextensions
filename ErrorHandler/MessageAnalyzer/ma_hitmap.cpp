@@ -2,6 +2,9 @@
 #include "ErrorHandler/MessageAnalyzer/ma_hitmap.h"
 #include "ErrorHandler/MessageAnalyzer/ma_condition.h"
 
+#include <string>
+#include <utility>
+
 using namespace novadaq::errorhandler;
 
 const std::string ma_hitmap::global_s = "__S_GLOBAL__";

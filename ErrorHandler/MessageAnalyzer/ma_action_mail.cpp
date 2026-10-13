@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <iostream>
 #include <sstream>
+#include <string>
 // #include <sys/types.h>
 // #include <sys/wait.h>
 

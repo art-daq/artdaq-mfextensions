@@ -23,6 +23,7 @@
 #include <vector>
 
 #include <TRACE/trace.h>
+#include <utility>
 
 namespace novadaq {
 namespace errorhandler {

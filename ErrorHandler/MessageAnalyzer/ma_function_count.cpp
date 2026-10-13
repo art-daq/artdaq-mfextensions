@@ -4,6 +4,7 @@
 #include "ErrorHandler/MessageAnalyzer/ma_participants.h"
 
 #include <boost/algorithm/string.hpp>
+#include <string>
 
 using namespace novadaq::errorhandler;
 

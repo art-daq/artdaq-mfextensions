@@ -4,6 +4,8 @@
 #include "ErrorHandler/MessageAnalyzer/ma_types.h"
 #include "messagefacility/Utilities/ELseverityLevel.h"
 
+#include <string>
+
 namespace novadaq {
 namespace errorhandler {
 

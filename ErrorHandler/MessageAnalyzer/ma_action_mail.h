@@ -4,6 +4,8 @@
 #include "ErrorHandler/MessageAnalyzer/ma_action.h"
 #include "ErrorHandler/MessageAnalyzer/ma_richmsg.h"
 
+#include <string>
+
 namespace novadaq {
 namespace errorhandler {
 

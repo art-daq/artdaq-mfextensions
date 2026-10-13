@@ -5,6 +5,7 @@
 
 #include <QtCore/QObject>
 #include <QtCore/QVector>
+#include <string>
 
 namespace fhicl {
 class ParameterSet;

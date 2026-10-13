@@ -3,6 +3,8 @@
 
 #include <sstream>
 #include <stdexcept>
+#include <string>
+#include <utility>
 
 using namespace novadaq::errorhandler;
 

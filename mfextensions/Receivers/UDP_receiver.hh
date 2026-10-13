@@ -5,6 +5,9 @@
 
 #include "messagefacility/MessageLogger/MessageLogger.h"
 
+#include <string>
+#include <list>
+
 namespace mfviewer {
 /// <summary>
 /// Receive messages through a UDP socket. Expects the syslog format provided by UDP_mfPlugin (ELUDP)

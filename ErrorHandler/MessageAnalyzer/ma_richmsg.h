@@ -4,6 +4,7 @@
 #include "ErrorHandler/MessageAnalyzer/ma_types.h"
 
 #include <vector>
+#include <string>
 
 namespace novadaq {
 namespace errorhandler {

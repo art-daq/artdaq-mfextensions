@@ -10,6 +10,8 @@
 
 // from system
 #include <list>
+#include <string>
+#include <utility>
 
 namespace novadaq {
 namespace errorhandler {

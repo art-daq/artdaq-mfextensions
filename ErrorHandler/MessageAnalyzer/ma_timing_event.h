@@ -3,6 +3,7 @@
 
 #include <boost/thread/mutex.hpp>
 #include <queue>
+#include <vector>
 #include "ErrorHandler/MessageAnalyzer/ma_types.h"
 
 namespace novadaq {

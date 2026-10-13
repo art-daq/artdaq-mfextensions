@@ -15,7 +15,9 @@
 
 // sys headers
 #include <sys/time.h>
+#include <string>
 #include <map>
+#include <vector>
 
 namespace novadaq {
 namespace errorhandler {

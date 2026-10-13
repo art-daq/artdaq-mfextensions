@@ -22,6 +22,8 @@
 #include <boost/spirit/include/phoenix_core.hpp>
 #include <boost/spirit/include/phoenix_operator.hpp>
 #include <boost/spirit/include/qi.hpp>
+#include <string>
+#include <vector>
 
 namespace ascii = ::boost::spirit::ascii;
 namespace phx = ::boost::phoenix;

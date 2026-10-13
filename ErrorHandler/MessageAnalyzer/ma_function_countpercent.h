@@ -3,6 +3,8 @@
 
 #include "ErrorHandler/MessageAnalyzer/ma_function.h"
 
+#include <string>
+
 namespace novadaq {
 namespace errorhandler {
 

@@ -5,6 +5,9 @@
 
 #include <boost/multi_array.hpp>
 #include <boost/regex.hpp>
+#include <string>
+#include <list>
+#include <vector>
 
 namespace novadaq {
 namespace errorhandler {

@@ -6,6 +6,7 @@
 #include <QtWidgets/QListWidget>
 
 #include <list>
+#include <string>
 #include <map>
 
 namespace novadaq {

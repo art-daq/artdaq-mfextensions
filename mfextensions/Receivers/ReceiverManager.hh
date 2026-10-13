@@ -1,9 +1,13 @@
 #ifndef ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_RECEIVERS_RECEIVERMANAGER_HH_
 #define ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_RECEIVERS_RECEIVERMANAGER_HH_
 
-#include <QObject>
-#include "fhiclcpp/fwd.h"
 #include "mfextensions/Receivers/MVReceiver.hh"
+
+#include "fhiclcpp/fwd.h"
+
+#include <QObject>
+#include <memory>
+#include <vector>
 
 namespace mfviewer {
 /// <summary>

@@ -3,6 +3,7 @@
 #include <QProgressDialog>
 #include <QScrollBar>
 #include <QtGui>
+#include <utility>
 
 #include "cetlib/filepath_maker.h"
 #include "fhiclcpp/ParameterSet.h"

@@ -14,6 +14,10 @@
 #include <QtWidgets/QMessageBox>
 
 #include <memory>
+#include <map>
+#include <string>
+#include <utility>
+#include <vector>
 
 using fhicl::ParameterSet;
 using namespace novadaq::errorhandler;

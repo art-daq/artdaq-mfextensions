@@ -8,6 +8,8 @@
 #include <boost/shared_ptr.hpp>
 
 #include <list>
+#include <string>
+#include <vector>
 
 namespace novadaq {
 namespace errorhandler {

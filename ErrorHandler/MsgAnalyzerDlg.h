@@ -18,6 +18,7 @@
 #include <list>
 #include <map>
 #include <string>
+#include <vector>
 
 namespace novadaq {
 namespace errorhandler {
