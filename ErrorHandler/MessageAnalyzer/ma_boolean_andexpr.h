@@ -1,5 +1,5 @@
-#ifndef ERROR_HANDLER_MA_BOOLEAN_ANDEXPR_H
-#define ERROR_HANDLER_MA_BOOLEAN_ANDEXPR_H
+#ifndef ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_BOOLEAN_ANDEXPR_H_
+#define ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_BOOLEAN_ANDEXPR_H_
 
 #include "ErrorHandler/MessageAnalyzer/ma_boolean_cond.h"
 
@@ -39,4 +39,4 @@ typedef std::list<ma_boolean_andexpr> boolean_andexprs_t;  ///< List of ma_boole
 }  // end of namespace errorhandler
 }  // end of namespace novadaq
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_BOOLEAN_ANDEXPR_H_

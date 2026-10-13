@@ -1,5 +1,5 @@
-#ifndef _NOVA_ERROR_HANDLER_NODE_INFO_H_
-#define _NOVA_ERROR_HANDLER_NODE_INFO_H_
+#ifndef ARTDAQ_MFEXTENSIONS_ERRORHANDLER_COMPONENTS_NODEINFO_H_
+#define ARTDAQ_MFEXTENSIONS_ERRORHANDLER_COMPONENTS_NODEINFO_H_
 
 #include "ErrorHandler/MessageAnalyzer/ma_utils.h"
 
@@ -87,4 +87,4 @@ public:
 Q_DECLARE_METATYPE(novadaq::errorhandler::msgs_t)
 Q_DECLARE_METATYPE(novadaq::errorhandler::msgs_sp_t)
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_ERRORHANDLER_COMPONENTS_NODEINFO_H_

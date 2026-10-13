@@ -1,5 +1,5 @@
-#ifndef ERRORHANDER_MA_ACTION_MAIL_H
-#define ERRORHANDER_MA_ACTION_MAIL_H
+#ifndef ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_ACTION_MAIL_H_
+#define ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_ACTION_MAIL_H_
 
 #include "ErrorHandler/MessageAnalyzer/ma_action.h"
 #include "ErrorHandler/MessageAnalyzer/ma_richmsg.h"
@@ -25,4 +25,4 @@ private:
 }  // end of namespace errorhandler
 }  // end of namespace novadaq
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_ACTION_MAIL_H_

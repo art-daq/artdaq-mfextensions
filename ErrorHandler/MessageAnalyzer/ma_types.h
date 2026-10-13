@@ -1,5 +1,5 @@
-#ifndef ERROR_HANDLER_MA_TYPES_H
-#define ERROR_HANDLER_MA_TYPES_H
+#ifndef ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_TYPES_H_
+#define ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_TYPES_H_
 
 /*
  *
@@ -167,4 +167,4 @@ enum message_type_t
 }  // end of namespace errorhandler
 }  // end of namespace novadaq
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_TYPES_H_

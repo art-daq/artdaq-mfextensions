@@ -1,5 +1,5 @@
-#ifndef TCP_listen_fd_hh
-#define TCP_listen_fd_hh
+#ifndef ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_RECEIVERS_DETAIL_TCP_LISTEN_FD_HH_
+#define ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_RECEIVERS_DETAIL_TCP_LISTEN_FD_HH_
 
 // This file (TCP_listen_fd.hh) was created by Ron Rechenmacher <ron@fnal.gov> on
 // Sep 15, 2016. "TERMS AND CONDITIONS" governing this file are in the README
@@ -8,14 +8,14 @@
 // $RCSfile: .emacs.gnu,v $
 // rev="$Revision: 1.30 $$Date: 2016/03/01 14:27:27 $";
 
-#include <arpa/inet.h>  /* inet_aton */
+#include <arpa/inet.h>  // inet_aton 
 #include <errno.h>      // errno
-#include <netdb.h>      /* gethostbyname */
-#include <netinet/in.h> /* inet_aton, struct sockaddr_in */
+#include <netdb.h>      // gethostbyname 
+#include <netinet/in.h> // inet_aton, struct sockaddr_in 
 #include <stdio.h>      // printf
 #include <stdlib.h>     // exit
 #include <strings.h>    // bzero
-#include <sys/socket.h> /* inet_aton, socket, bind, listen, accept */
+#include <sys/socket.h> // inet_aton, socket, bind, listen, accept 
 #include "trace.h"
 
 /**
@@ -35,7 +35,7 @@ int TCP_listen_fd(int port, int rcvbuf)
 	int listener_fd;
 	struct sockaddr_in sin;
 
-	listener_fd = socket(PF_INET, SOCK_STREAM, 0); /* man TCP(7P) */
+	listener_fd = socket(PF_INET, SOCK_STREAM, 0); // man TCP(7P) 
 	if (listener_fd == -1)
 	{
 		TLOG(TLVL_ERROR) << "Could not open listen socket! Exiting with code 1!";
@@ -97,4 +97,4 @@ int TCP_listen_fd(int port, int rcvbuf)
 	return (listener_fd);
 }  // TCP_listen_fd
 
-#endif  // TCP_listen_fd_hh
+#endif  // ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_RECEIVERS_DETAIL_TCP_LISTEN_FD_HH_

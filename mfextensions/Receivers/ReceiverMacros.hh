@@ -1,5 +1,5 @@
-#ifndef mfextensions_Receivers_ReceiverMacros_hh
-#define mfextensions_Receivers_ReceiverMacros_hh
+#ifndef ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_RECEIVERS_RECEIVERMACROS_HH_
+#define ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_RECEIVERS_RECEIVERMACROS_HH_
 
 #include "fhiclcpp/fwd.h"
 #include "mfextensions/Receivers/MVReceiver.hh"
@@ -27,4 +27,4 @@ typedef std::unique_ptr<mfviewer::MVReceiver> makeFunc_t(fhicl::ParameterSet con
 		return std::unique_ptr<mfviewer::MVReceiver>(new klass(ps));          \
 	}                                                                         \
 	}
-#endif /* mfextensions_Receivers_RecevierMacros_h */
+#endif  // ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_RECEIVERS_RECEIVERMACROS_HH_

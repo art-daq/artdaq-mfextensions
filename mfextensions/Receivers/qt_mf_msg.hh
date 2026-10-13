@@ -1,5 +1,5 @@
-#ifndef MESSAGEFACILITY_EXTENSIONS_QT_MF_MSG_H
-#define MESSAGEFACILITY_EXTENSIONS_QT_MF_MSG_H
+#ifndef ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_RECEIVERS_QT_MF_MSG_HH_
+#define ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_RECEIVERS_QT_MF_MSG_HH_
 
 // Wrapped mf message type to be used by msgviewer for
 // the purpose of fast processing
@@ -187,4 +187,4 @@ typedef std::list<msg_ptr_t> msgs_t;
 /// </summary>
 typedef std::map<QString, msgs_t> msgs_map_t;
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_RECEIVERS_QT_MF_MSG_HH_

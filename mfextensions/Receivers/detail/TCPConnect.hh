@@ -1,5 +1,5 @@
-#ifndef TCPConnect_hh
-#define TCPConnect_hh
+#ifndef ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_RECEIVERS_DETAIL_TCPCONNECT_HH_
+#define ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_RECEIVERS_DETAIL_TCPCONNECT_HH_
 #include <arpa/inet.h>  // inet_aton
 #include <netdb.h>      // gethostbyname
 #include <netinet/in.h>
@@ -134,12 +134,12 @@ inline int GetInterfaceForNetwork(char const* host_in, in_addr& addr)
 		{
 			if (ifa->ifa_addr == nullptr) continue;
 
-			/* For an AF_INET* interface address, display the address */
+			// For an AF_INET* interface address, display the address 
 
 			if (ifa->ifa_addr->sa_family == AF_INET)
 			{
-				auto if_addr = reinterpret_cast<struct sockaddr_in*>(ifa->ifa_addr);  // NOLINT(cppcoreguidelines-pro-type-reinterpret-cast)
-				auto sa = reinterpret_cast<struct sockaddr_in*>(ifa->ifa_netmask);    // NOLINT(cppcoreguidelines-pro-type-reinterpret-cast)
+				auto if_addr = reinterpret_cast<struct sockaddr_in*>(ifa->ifa_addr);  // NOLINT(runtime/casting,cppcoreguidelines-pro-type-reinterpret-cast)
+				auto sa = reinterpret_cast<struct sockaddr_in*>(ifa->ifa_netmask);    // NOLINT(runtime/casting,cppcoreguidelines-pro-type-reinterpret-cast)
 
 				TLOG(TLVL_DEBUG + 40) << "IF: " << ifa->ifa_name << " Desired: " << desired_host.s_addr
 				                      << " netmask: " << sa->sin_addr.s_addr << " this interface: " << if_addr->sin_addr.s_addr;
@@ -260,7 +260,7 @@ inline int TCPConnect(char const* host_in, int dflt_port, int64_t flags = 0, int
 		return -1;
 	}
 
-	sts = connect(s_fd, reinterpret_cast<struct sockaddr*>(&sin), sizeof(sin));  // NOLINT(cppcoreguidelines-pro-type-reinterpret-cast)
+	sts = connect(s_fd, reinterpret_cast<struct sockaddr*>(&sin), sizeof(sin));  // NOLINT(runtime/casting,cppcoreguidelines-pro-type-reinterpret-cast)
 	if (sts == -1)
 	{
 		// perror( "connect error" );
@@ -296,4 +296,4 @@ inline int TCPConnect(char const* host_in, int dflt_port, int64_t flags = 0, int
 	return (s_fd);
 }
 
-#endif  // TCPConnect_hh
+#endif  // ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_RECEIVERS_DETAIL_TCPCONNECT_HH_

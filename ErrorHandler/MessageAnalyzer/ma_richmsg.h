@@ -1,5 +1,5 @@
-#ifndef ERRORHANDLER_MA_RICHMSG_H
-#define ERRORHANDLER_MA_RICHMSG_H
+#ifndef ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_RICHMSG_H_
+#define ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_RICHMSG_H_
 
 #include "ErrorHandler/MessageAnalyzer/ma_types.h"
 
@@ -35,4 +35,4 @@ private:
 }  // end of namespace errorhandler
 }  // end of namespace novadaq
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_RICHMSG_H_

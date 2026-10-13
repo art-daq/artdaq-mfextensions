@@ -1,5 +1,5 @@
-#ifndef ERROR_HANDLER_MA_DOMAIN_ANDEXPR_H
-#define ERROR_HANDLER_MA_DOMAIN_ANDEXPR_H
+#ifndef ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_DOMAIN_ANDEXPR_H_
+#define ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_DOMAIN_ANDEXPR_H_
 
 // from novadaq
 #include "ErrorHandler/MessageAnalyzer/ma_domain_cond.h"
@@ -42,4 +42,4 @@ typedef std::list<ma_domain_andexpr> domain_andexprs_t;
 }  // end of namespace errorhandler
 }  // end of namespace novadaq
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_DOMAIN_ANDEXPR_H_

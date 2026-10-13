@@ -1,5 +1,5 @@
-#ifndef ERROR_HANDLER_MA_DOMAIN_OPS_H
-#define ERROR_HANDLER_MA_DOMAIN_OPS_H
+#ifndef ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_DOMAIN_OPS_H_
+#define ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_DOMAIN_OPS_H_
 
 #include "ErrorHandler/MessageAnalyzer/ma_types.h"
 
@@ -415,4 +415,4 @@ novadaq::errorhandler::domain_union(ma_domains& ds)
 	return ds;
 }
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_DOMAIN_OPS_H_

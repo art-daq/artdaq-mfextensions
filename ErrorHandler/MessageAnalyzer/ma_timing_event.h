@@ -1,5 +1,5 @@
-#ifndef ERROR_HANDLER_MA_TIMING_EVENT_H
-#define ERROR_HANDLER_MA_TIMING_EVENT_H
+#ifndef ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_TIMING_EVENT_H_
+#define ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_TIMING_EVENT_H_
 
 #include <boost/thread/mutex.hpp>
 #include <queue>
@@ -57,4 +57,4 @@ public:
 }  // namespace errorhandler
 }  // namespace novadaq
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_TIMING_EVENT_H_

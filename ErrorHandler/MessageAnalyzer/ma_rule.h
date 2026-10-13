@@ -1,5 +1,5 @@
-#ifndef ERROR_HANDLER_MA_RULE_H
-#define ERROR_HANDLER_MA_RULE_H
+#ifndef ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_RULE_H_
+#define ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_RULE_H_
 
 // from novadaq
 #include "ErrorHandler/MessageAnalyzer/ma_action.h"
@@ -180,4 +180,4 @@ typedef std::map<std::string, ma_rule> rule_map_t;
 }  // end of namespace errorhandler
 }  // end of namespace novadaq
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_RULE_H_

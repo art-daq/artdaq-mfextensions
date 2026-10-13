@@ -1,5 +1,5 @@
-#ifndef ERRORHANDLER_PARTICIPANTS_H
-#define ERRORHANDLER_PARTICIPANTS_H
+#ifndef ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_PARTICIPANTS_H_
+#define ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_PARTICIPANTS_H_
 
 // ma_participants
 // --------------------------------------------
@@ -62,4 +62,4 @@ private:
 }  // end of namespace errorhandler
 }  // end of namespace novadaq
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_PARTICIPANTS_H_

@@ -1,5 +1,5 @@
-#ifndef ERROR_HANDLER_MA_FREQUENCY_H
-#define ERROR_HANDLER_MA_FREQUENCY_H
+#ifndef ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_CELL_H_
+#define ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_CELL_H_
 
 #include "ErrorHandler/MessageAnalyzer/ma_utils.h"
 
@@ -86,4 +86,4 @@ typedef boost::multi_array_types::index_range range;
 }  // end of namespace errorhandler
 }  // end of namespace novadaq
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_CELL_H_

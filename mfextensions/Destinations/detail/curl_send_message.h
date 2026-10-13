@@ -1,5 +1,5 @@
-#ifndef CURL_SEND_MESSAGE_H
-#define CURL_SEND_MESSAGE_H 1
+#ifndef ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_DESTINATIONS_DETAIL_CURL_SEND_MESSAGE_H_
+#define ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_DESTINATIONS_DETAIL_CURL_SEND_MESSAGE_H_
 
 #ifdef __cplusplus
 extern "C" {
@@ -56,4 +56,4 @@ void send_message_ssl(const char* dest, const char* to[], size_t to_size, const 
 }
 #endif
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_DESTINATIONS_DETAIL_CURL_SEND_MESSAGE_H_

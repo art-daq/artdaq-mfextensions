@@ -1,5 +1,5 @@
-#ifndef ERROR_HANDLER_MA_HITMAP_H
-#define ERROR_HANDLER_MA_HITMAP_H
+#ifndef ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_HITMAP_H_
+#define ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_HITMAP_H_
 
 #include "ErrorHandler/MessageAnalyzer/ma_cell.h"
 #include "ErrorHandler/MessageAnalyzer/ma_domain_ops.h"
@@ -81,4 +81,4 @@ private:
 }  // end of namespace errorhandler
 }  // end of namespace novadaq
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_HITMAP_H_
