@@ -134,7 +134,7 @@ inline int GetInterfaceForNetwork(char const* host_in, in_addr& addr)
 		{
 			if (ifa->ifa_addr == nullptr) continue;
 
-			// For an AF_INET* interface address, display the address 
+			// For an AF_INET* interface address, display the address
 
 			if (ifa->ifa_addr->sa_family == AF_INET)
 			{

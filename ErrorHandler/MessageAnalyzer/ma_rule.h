@@ -15,8 +15,8 @@
 
 // sys headers
 #include <sys/time.h>
-#include <string>
 #include <map>
+#include <string>
 #include <vector>
 
 namespace novadaq {

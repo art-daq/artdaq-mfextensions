@@ -5,8 +5,8 @@
 
 #include "messagefacility/MessageLogger/MessageLogger.h"
 
-#include <string>
 #include <list>
+#include <string>
 
 namespace mfviewer {
 /// <summary>

@@ -6,8 +6,8 @@
 #include <QtWidgets/QListWidget>
 
 #include <list>
-#include <string>
 #include <map>
+#include <string>
 
 namespace novadaq {
 namespace errorhandler {

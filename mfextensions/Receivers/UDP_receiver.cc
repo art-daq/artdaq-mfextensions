@@ -2,9 +2,9 @@
 
 #include "mfextensions/Receivers/UDP_receiver.hh"
 #include <sys/poll.h>
+#include <list>
 #include <memory>
 #include <sstream>
-#include <list>
 #include "messagefacility/Utilities/ELseverityLevel.h"
 #include "mfextensions/Receivers/ReceiverMacros.hh"
 #include "mfextensions/Receivers/detail/TCPConnect.hh"

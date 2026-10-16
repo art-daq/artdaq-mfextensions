@@ -4,8 +4,8 @@
 #include "ErrorHandler/MessageAnalyzer/ma_condition.h"
 #include "ErrorHandler/MessageAnalyzer/ma_participants.h"
 #include "ErrorHandler/MessageAnalyzer/ma_rule.h"
-#include "ErrorHandler/MessageAnalyzer/ma_types.h"
 #include "ErrorHandler/MessageAnalyzer/ma_timing_event.h"
+#include "ErrorHandler/MessageAnalyzer/ma_types.h"
 
 #include <boost/thread.hpp>
 #include <string>

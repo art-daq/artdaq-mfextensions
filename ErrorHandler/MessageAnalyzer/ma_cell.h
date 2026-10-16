@@ -5,8 +5,8 @@
 
 #include <boost/multi_array.hpp>
 #include <boost/regex.hpp>
-#include <string>
 #include <list>
+#include <string>
 #include <vector>
 
 namespace novadaq {

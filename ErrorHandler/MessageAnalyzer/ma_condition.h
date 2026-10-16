@@ -15,8 +15,8 @@
 // sys headers
 #include <list>
 #include <map>
-#include <vector>
 #include <string>
+#include <vector>
 
 namespace novadaq {
 namespace errorhandler {

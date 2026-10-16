@@ -161,7 +161,7 @@ public slots:
 signals:
 
 	// emits when alarms triggered
-	void alarm(QString const & //rule name
+	void alarm(QString const &  // rule name
 	           ,
 	           QString const & /*message body*/);
 
