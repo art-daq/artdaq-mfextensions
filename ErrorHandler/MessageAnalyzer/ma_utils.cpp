@@ -2,6 +2,8 @@
 #if 0
 #include "ErrorHandler/MessageAnalyzer/ma_utils.h"
 
+#include <string>
+
 using namespace novadaq::errorhandler;
 
 int novadaq::errorhandler::and_op (int i, int j)

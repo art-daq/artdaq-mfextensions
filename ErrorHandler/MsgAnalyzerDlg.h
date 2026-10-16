@@ -1,5 +1,5 @@
-#ifndef _NOVA_MSG_ANALYZER_DLG_H_
-#define _NOVA_MSG_ANALYZER_DLG_H_
+#ifndef ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MSGANALYZERDLG_H_
+#define ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MSGANALYZERDLG_H_
 
 #include "ui_MsgAnalyzerDlg.h"
 
@@ -18,6 +18,7 @@
 #include <list>
 #include <map>
 #include <string>
+#include <vector>
 
 namespace novadaq {
 namespace errorhandler {
@@ -156,4 +157,4 @@ private:
 }  // end of namespace errorhandler
 }  // end of namespace novadaq
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MSGANALYZERDLG_H_

@@ -1,6 +1,9 @@
 #include "ErrorHandler/MessageAnalyzer/ma_richmsg.h"
 #include "ErrorHandler/MessageAnalyzer/ma_rule.h"
 
+#include <string>
+#include <vector>
+
 using namespace novadaq::errorhandler;
 
 namespace {

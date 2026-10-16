@@ -1,6 +1,9 @@
 
 #include "ErrorHandler/MessageAnalyzer/ma_function.h"
 
+#include <string>
+#include <utility>
+
 using namespace novadaq::errorhandler;
 
 // ma_function class

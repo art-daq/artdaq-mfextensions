@@ -1,6 +1,9 @@
 #include "ErrorHandler/MessageAnalyzer/ma_condition.h"
 #include "ErrorHandler/MessageAnalyzer/ma_parse.h"
 
+#include <string>
+#include <vector>
+
 using namespace novadaq::errorhandler;
 
 ma_condition::ma_condition(std::string const& desc, std::string const& sev, std::vector<std::string> const& sources, std::vector<std::string> const& categories, std::string const& regex, std::string const& test, bool persistent_cond, int occur, bool at_least, int timespan, bool per_source, bool per_target, int target_group, ma_timing_events& events)

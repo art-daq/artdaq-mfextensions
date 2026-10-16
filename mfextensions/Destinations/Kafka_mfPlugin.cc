@@ -14,7 +14,7 @@
 #include <fstream>
 
 #define TRACE_NAME "Kafka_mfPlugin"
-#include "trace.h"
+#include "TRACE/trace.h"
 
 namespace mfplugins {
 using mf::ErrorObj;

@@ -1,5 +1,5 @@
-#ifndef ERROR_HANDLER_MA_COND_TEST_PRIMARY_H
-#define ERROR_HANDLER_MA_COND_TEST_PRIMARY_H
+#ifndef ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_COND_TEST_PRIMARY_H_
+#define ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_COND_TEST_PRIMARY_H_
 
 #include "ErrorHandler/MessageAnalyzer/ma_test_function.h"
 #include "ErrorHandler/MessageAnalyzer/ma_types.h"
@@ -8,6 +8,8 @@
 #include <boost/shared_ptr.hpp>
 
 #include <list>
+#include <string>
+#include <vector>
 
 namespace novadaq {
 namespace errorhandler {
@@ -53,4 +55,4 @@ typedef std::list<ma_cond_test_primary> test_primaries_t;
 }  // end of namespace errorhandler
 }  // end of namespace novadaq
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_COND_TEST_PRIMARY_H_

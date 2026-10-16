@@ -4,6 +4,8 @@
 #include "ErrorHandler/MessageAnalyzer/ma_domain_ops.h"
 #include "ErrorHandler/MessageAnalyzer/ma_rule.h"
 
+#include <string>
+
 using namespace novadaq::errorhandler;
 
 ma_domain_cond::ma_domain_cond()
@@ -29,7 +31,7 @@ void ma_domain_cond::evaluate(ma_domains& domains) const
 
 	if (cond_type == EXPR)
 	{
-		if (expr.get() == NULL)
+		if (expr.get() == nullptr)
 			throw std::runtime_error("expr not exist");
 
 		expr->evaluate(worksheet);

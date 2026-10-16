@@ -1,7 +1,9 @@
-#ifndef ERROR_HANDLER_MA_FUNCTION_COUNT_PERCENT_H
-#define ERROR_HANDLER_MA_FUNCTION_COUNT_PERCENT_H
+#ifndef ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_FUNCTION_COUNTPERCENT_H_
+#define ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_FUNCTION_COUNTPERCENT_H_
 
 #include "ErrorHandler/MessageAnalyzer/ma_function.h"
+
+#include <string>
 
 namespace novadaq {
 namespace errorhandler {
@@ -30,4 +32,4 @@ private:
 }  // end of namespace errorhandler
 }  // end of namespace novadaq
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_FUNCTION_COUNTPERCENT_H_

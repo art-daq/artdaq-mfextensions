@@ -20,7 +20,7 @@
 #include "mfextensions/Receivers/detail/TCPConnect.hh"
 
 #define TRACE_NAME "OTS_mfPlugin"
-#include "trace.h"
+#include "TRACE/trace.h"
 
 // Boost includes
 #include <boost/algorithm/string.hpp>
@@ -143,7 +143,7 @@ ELOTS::ELOTS(Parameters const& pset)
 				if (ifa->ifa_addr->sa_family == AF_INET)
 				{
 					// a valid IPv4 addres
-					tmpAddrPtr = &(reinterpret_cast<struct sockaddr_in*>(ifa->ifa_addr))->sin_addr;  // NOLINT(cppcoreguidelines-pro-type-reinterpret-cast)
+					tmpAddrPtr = &(reinterpret_cast<struct sockaddr_in*>(ifa->ifa_addr))->sin_addr;  // NOLINT(runtime/casting,cppcoreguidelines-pro-type-reinterpret-cast)
 					char addressBuffer[INET_ADDRSTRLEN];
 					inet_ntop(AF_INET, tmpAddrPtr, addressBuffer, INET_ADDRSTRLEN);
 					hostaddr_ = addressBuffer;
@@ -152,7 +152,7 @@ ELOTS::ELOTS(Parameters const& pset)
 				else if (ifa->ifa_addr->sa_family == AF_INET6)
 				{
 					// a valid IPv6 address
-					tmpAddrPtr = &(reinterpret_cast<struct sockaddr_in6*>(ifa->ifa_addr))->sin6_addr;  // NOLINT(cppcoreguidelines-pro-type-reinterpret-cast)
+					tmpAddrPtr = &(reinterpret_cast<struct sockaddr_in6*>(ifa->ifa_addr))->sin6_addr;  // NOLINT(runtime/casting,cppcoreguidelines-pro-type-reinterpret-cast)
 					char addressBuffer[INET6_ADDRSTRLEN];
 					inet_ntop(AF_INET6, tmpAddrPtr, addressBuffer, INET6_ADDRSTRLEN);
 					hostaddr_ = addressBuffer;

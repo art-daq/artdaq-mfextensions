@@ -1,5 +1,5 @@
-#ifndef _NOVA_MSG_BOX_H
-#define _NOVA_MSG_BOX_H
+#ifndef ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MSGBOX_H_
+#define ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MSGBOX_H_
 
 #include "ErrorHandler/Components/NodeInfo.h"
 #include "ErrorHandler/MessageAnalyzer/ma_utils.h"
@@ -27,4 +27,4 @@ private:
 }  // end of namespace errorhandler
 }  // end of namespace novadaq
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MSGBOX_H_

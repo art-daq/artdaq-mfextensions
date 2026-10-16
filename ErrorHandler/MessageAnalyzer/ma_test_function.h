@@ -1,5 +1,5 @@
-#ifndef ERROR_HANDLER_MA_TEST_H
-#define ERROR_HANDLER_MA_TEST_H
+#ifndef ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_TEST_FUNCTION_H_
+#define ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_TEST_FUNCTION_H_
 
 // ----------------------------------------------------------
 //
@@ -77,4 +77,4 @@ struct ma_test_function_maker
 	ma_test_function_maker                                     \
 	    class_name##_maker_func_global_var(#func_name, class_name##_maker_func);
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_TEST_FUNCTION_H_

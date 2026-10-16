@@ -1,5 +1,8 @@
 #include "ErrorHandler/MessageAnalyzer/ma_test_function.h"
 
+#include <string>
+#include <utility>
+
 using namespace novadaq::errorhandler;
 
 void ma_test_function_factory::reg(std::string const& func_name, gen_test_t f)

@@ -3,6 +3,10 @@
 #include "ErrorHandler/MessageAnalyzer/ma_parse.h"
 
 #include <iostream>
+#include <map>
+#include <string>
+#include <utility>
+#include <vector>
 
 using fhicl::ParameterSet;
 using namespace novadaq::errorhandler;

@@ -2,6 +2,9 @@
 #include "ErrorHandler/MessageAnalyzer/ma_boolean_cond.h"
 #include "ErrorHandler/MessageAnalyzer/ma_boolean_expr.h"
 
+#include <string>
+#include <vector>
+
 using namespace novadaq::errorhandler;
 
 template<typename T>

@@ -1,7 +1,11 @@
-#ifndef ERROR_HANDLER_MA_FUNCTION_IS_SYNCD_H
-#define ERROR_HANDLER_MA_FUNCTION_IS_SYNCD_H
+#ifndef ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_FUNCTION_IS_SYNCD_H_
+#define ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_FUNCTION_IS_SYNCD_H_
 
 #include "ErrorHandler/MessageAnalyzer/ma_function.h"
+
+#include <algorithm>
+#include <map>
+#include <string>
 
 namespace novadaq {
 namespace errorhandler {
@@ -28,4 +32,4 @@ private:
 }  // end of namespace errorhandler
 }  // end of namespace novadaq
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_FUNCTION_IS_SYNCD_H_

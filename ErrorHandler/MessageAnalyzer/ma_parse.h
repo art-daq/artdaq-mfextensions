@@ -1,7 +1,9 @@
-#ifndef ERROR_HANDLER_MA_PARSE_H
-#define ERROR_HANDLER_MA_PARSE_H
+#ifndef ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_PARSE_H_
+#define ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_PARSE_H_
 
 #include "ErrorHandler/MessageAnalyzer/ma_types.h"
+
+#include <string>
 
 namespace novadaq {
 namespace errorhandler {
@@ -16,4 +18,4 @@ bool parse_condition_test(std::string const& s, ma_cond_test_expr& expr);
 }  // end of namespace errorhandler
 }  // end of namespace novadaq
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_PARSE_H_

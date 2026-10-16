@@ -1,8 +1,10 @@
-#ifndef ERROR_HANDLER_UTILS_H
-#define ERROR_HANDLER_UTILS_H
+#ifndef ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_UTILS_H_
+#define ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_UTILS_H_
 
 #include "ErrorHandler/MessageAnalyzer/ma_types.h"
 #include "messagefacility/Utilities/ELseverityLevel.h"
+
+#include <string>
 
 namespace novadaq {
 namespace errorhandler {
@@ -94,4 +96,4 @@ sev_code_t novadaq::errorhandler::get_sev_from_string(std::string const& sev)
 	}
 }
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_UTILS_H_

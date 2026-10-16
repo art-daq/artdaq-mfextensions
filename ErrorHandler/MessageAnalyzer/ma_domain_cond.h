@@ -1,5 +1,5 @@
-#ifndef ERROR_HANDLER_MA_DOMAIN_COND_H
-#define ERROR_HANDLER_MA_DOMAIN_COND_H
+#ifndef ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_DOMAIN_COND_H_
+#define ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_DOMAIN_COND_H_
 
 // from novadaq
 #include "ErrorHandler/MessageAnalyzer/ma_condition.h"
@@ -10,6 +10,8 @@
 
 // from system
 #include <list>
+#include <string>
+#include <utility>
 
 namespace novadaq {
 namespace errorhandler {
@@ -69,4 +71,4 @@ typedef std::list<ma_domain_cond> domain_conds_t;
 }  // end of namespace errorhandler
 }  // end of namespace novadaq
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_DOMAIN_COND_H_

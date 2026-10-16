@@ -1,6 +1,8 @@
 #include "ErrorHandler/MessageAnalyzer/ma_cond_test_primary.h"
 #include "ErrorHandler/MessageAnalyzer/ma_cond_test_expr.h"
 
+#include <string>
+
 using namespace novadaq::errorhandler;
 
 template<typename T>

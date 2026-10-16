@@ -1,13 +1,15 @@
-#ifndef ERROR_HANDLER_MA_RULE_ENGINE_H
-#define ERROR_HANDLER_MA_RULE_ENGINE_H
+#ifndef ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_RULE_ENGINE_H_
+#define ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_RULE_ENGINE_H_
 
 #include "ErrorHandler/MessageAnalyzer/ma_condition.h"
 #include "ErrorHandler/MessageAnalyzer/ma_participants.h"
 #include "ErrorHandler/MessageAnalyzer/ma_rule.h"
+#include "ErrorHandler/MessageAnalyzer/ma_timing_event.h"
 #include "ErrorHandler/MessageAnalyzer/ma_types.h"
 
 #include <boost/thread.hpp>
-#include "ErrorHandler/MessageAnalyzer/ma_timing_event.h"
+#include <string>
+#include <vector>
 
 namespace fhicl {
 class ParameterSet;
@@ -215,4 +217,4 @@ private:
 }  // end of namespace errorhandler
 }  // end of namespace novadaq
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_RULE_ENGINE_H_

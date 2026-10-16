@@ -2,6 +2,7 @@
 #include <sstream>
 
 #include <QtGui/QPainter>
+#include <string>
 
 using namespace novadaq::errorhandler;
 

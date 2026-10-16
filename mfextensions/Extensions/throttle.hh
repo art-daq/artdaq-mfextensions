@@ -1,5 +1,5 @@
-#ifndef artdaq_mfextensions_extensions_throttle_hh
-#define artdaq_mfextensions_extensions_throttle_hh
+#ifndef ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_EXTENSIONS_THROTTLE_HH_
+#define ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_EXTENSIONS_THROTTLE_HH_
 
 #include <string>
 
@@ -50,4 +50,4 @@ private:
 	bool in_use_;
 };
 
-#endif  // artdaq_mfextensions_extensions_throttle_hh
+#endif  // ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_EXTENSIONS_THROTTLE_HH_

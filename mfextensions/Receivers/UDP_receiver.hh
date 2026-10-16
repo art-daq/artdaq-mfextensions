@@ -1,9 +1,12 @@
-#ifndef MFVIEWER_RECEIVERS_UDP_RECEIVER_HH
-#define MFVIEWER_RECEIVERS_UDP_RECEIVER_HH
+#ifndef ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_RECEIVERS_UDP_RECEIVER_HH_
+#define ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_RECEIVERS_UDP_RECEIVER_HH_
 
 #include "mfextensions/Receivers/MVReceiver.hh"
 
 #include "messagefacility/MessageLogger/MessageLogger.h"
+
+#include <list>
+#include <string>
 
 namespace mfviewer {
 /// <summary>
@@ -61,4 +64,4 @@ private:
 };
 }  // namespace mfviewer
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_RECEIVERS_UDP_RECEIVER_HH_

@@ -6,6 +6,7 @@
 
 #include <cstdlib>
 #include <iostream>
+#include <string>
 using namespace novadaq::errorhandler;
 
 REG_MA_TEST_FUNCTION(grp_to_number, ma_tf_grp_to_number)

@@ -3,6 +3,8 @@
 
 #include <QtCore/QMetaType>
 #include <boost/bind/bind.hpp>
+#include <string>
+#include <vector>
 
 using namespace novadaq::errorhandler;
 

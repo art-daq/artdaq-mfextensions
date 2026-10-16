@@ -1,5 +1,5 @@
-#ifndef ERROR_HANDLER_MA_DOMAIN_EXPR_H
-#define ERROR_HANDLER_MA_DOMAIN_EXPR_H
+#ifndef ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_DOMAIN_EXPR_H_
+#define ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_DOMAIN_EXPR_H_
 
 // from novadaq
 #include "ErrorHandler/MessageAnalyzer/ma_condition.h"
@@ -42,4 +42,4 @@ private:
 }  // end of namespace errorhandler
 }  // end of namespace novadaq
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_DOMAIN_EXPR_H_

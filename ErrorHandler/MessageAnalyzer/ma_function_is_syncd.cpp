@@ -3,6 +3,8 @@
 #include "ErrorHandler/MessageAnalyzer/ma_condition.h"
 
 #include <boost/lexical_cast.hpp>
+#include <string>
+#include <utility>
 
 using namespace novadaq::errorhandler;
 

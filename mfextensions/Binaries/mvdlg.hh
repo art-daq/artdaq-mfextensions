@@ -1,5 +1,5 @@
-#ifndef MSGVIEWERDLG_H
-#define MSGVIEWERDLG_H
+#ifndef ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_BINARIES_MVDLG_HH_
+#define ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_BINARIES_MVDLG_HH_
 
 #include "mfextensions/Extensions/suppress.hh"
 #include "mfextensions/Extensions/throttle.hh"
@@ -204,4 +204,4 @@ enum list_mask_t
 	LIST_HOST = 0x04
 };
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_BINARIES_MVDLG_HH_

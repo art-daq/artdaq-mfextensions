@@ -1,5 +1,5 @@
-#ifndef ERROR_HANDLER_MA_BOOLEAN_COND_H
-#define ERROR_HANDLER_MA_BOOLEAN_COND_H
+#ifndef ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_BOOLEAN_COND_H_
+#define ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_BOOLEAN_COND_H_
 
 #include "ErrorHandler/MessageAnalyzer/ma_condition.h"
 #include "ErrorHandler/MessageAnalyzer/ma_function.h"
@@ -9,6 +9,8 @@
 #include <boost/shared_ptr.hpp>
 
 #include <list>
+#include <string>
+#include <vector>
 
 namespace novadaq {
 namespace errorhandler {
@@ -110,4 +112,4 @@ typedef std::list<ma_boolean_cond> boolean_conds_t;
 }  // end of namespace errorhandler
 }  // end of namespace novadaq
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_BOOLEAN_COND_H_

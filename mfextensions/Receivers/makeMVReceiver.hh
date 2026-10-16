@@ -1,5 +1,5 @@
-#ifndef mfextensions_Plugins_makeMVReceiver_hh
-#define mfextensions_Plugins_makeMVReceiver_hh
+#ifndef ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_RECEIVERS_MAKEMVRECEIVER_HH_
+#define ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_RECEIVERS_MAKEMVRECEIVER_HH_
 // Using LibraryManager, find the correct library and return an instance
 // of the specified generator.
 
@@ -13,4 +13,4 @@ class MVReceiver;
 
 std::unique_ptr<MVReceiver> makeMVReceiver(std::string const& receiver_plugin_spec, fhicl::ParameterSet const& ps);
 }  // namespace mfviewer
-#endif /* mfextensions_Plugins_makeMVReceiver_h */
+#endif  // ARTDAQ_MFEXTENSIONS_MFEXTENSIONS_RECEIVERS_MAKEMVRECEIVER_HH_

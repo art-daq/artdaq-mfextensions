@@ -1,5 +1,5 @@
-#ifndef ERROR_HANDLER_MA_ACTION_H
-#define ERROR_HANDLER_MA_ACTION_H
+#ifndef ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_ACTION_H_
+#define ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_ACTION_H_
 
 #include <map>
 #include <string>
@@ -87,4 +87,4 @@ struct ma_action_maker
 	ma_action_maker                                                             \
 	    class_name##_maker_func_global_var(#act_name, class_name##_maker_func);
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_ACTION_H_

@@ -1,5 +1,5 @@
-#ifndef ERROR_HANDLER_MA_COND_TEST_ANDEXPR_H
-#define ERROR_HANDLER_MA_COND_TEST_ANDEXPR_H
+#ifndef ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_COND_TEST_ANDEXPR_H_
+#define ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_COND_TEST_ANDEXPR_H_
 
 #include "ErrorHandler/MessageAnalyzer/ma_cond_test_primary.h"
 
@@ -30,4 +30,4 @@ typedef std::list<ma_cond_test_andexpr> test_andexprs_t;
 }  // end of namespace errorhandler
 }  // end of namespace novadaq
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_ERRORHANDLER_MESSAGEANALYZER_MA_COND_TEST_ANDEXPR_H_

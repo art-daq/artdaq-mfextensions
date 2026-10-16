@@ -2,6 +2,8 @@
 
 #include "mfextensions/Receivers/UDP_receiver.hh"
 #include <sys/poll.h>
+#include <list>
+#include <memory>
 #include <sstream>
 #include "messagefacility/Utilities/ELseverityLevel.h"
 #include "mfextensions/Receivers/ReceiverMacros.hh"
@@ -41,7 +43,7 @@ void mfviewer::UDPReceiver::setupMessageListener_()
 	si_me_request.sin_family = AF_INET;
 	si_me_request.sin_port = htons(message_port_);
 	si_me_request.sin_addr.s_addr = htonl(INADDR_ANY);
-	if (bind(message_socket_, reinterpret_cast<struct sockaddr*>(&si_me_request), sizeof(si_me_request)) == -1)  // NOLINT(cppcoreguidelines-pro-type-reinterpret-cast)
+	if (bind(message_socket_, reinterpret_cast<struct sockaddr*>(&si_me_request), sizeof(si_me_request)) == -1)  // NOLINT(runtime/casting,cppcoreguidelines-pro-type-reinterpret-cast)
 	{
 		TLOG(TLVL_ERROR) << "Cannot bind message socket to port " << message_port_ << ", err=" << strerror(errno);
 		exit(1);

@@ -1,10 +1,11 @@
-#ifndef ERROR_HANDLER_QT_RULE_ENGINE_H
-#define ERROR_HANDLER_QT_RULE_ENGINE_H
+#ifndef ARTDAQ_MFEXTENSIONS_ERRORHANDLER_COMPONENTS_QT_RULE_ENGINE_H_
+#define ARTDAQ_MFEXTENSIONS_ERRORHANDLER_COMPONENTS_QT_RULE_ENGINE_H_
 
 #include "ErrorHandler/MessageAnalyzer/ma_rule_engine.h"
 
 #include <QtCore/QObject>
 #include <QtCore/QVector>
+#include <string>
 
 namespace fhicl {
 class ParameterSet;
@@ -160,7 +161,7 @@ public slots:
 signals:
 
 	// emits when alarms triggered
-	void alarm(QString const & /*rule name*/
+	void alarm(QString const &  // rule name
 	           ,
 	           QString const & /*message body*/);
 
@@ -177,4 +178,4 @@ private:
 }  // namespace errorhandler
 }  // namespace novadaq
 
-#endif
+#endif  // ARTDAQ_MFEXTENSIONS_ERRORHANDLER_COMPONENTS_QT_RULE_ENGINE_H_
